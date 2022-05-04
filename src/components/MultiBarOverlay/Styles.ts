@@ -1,13 +1,14 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
-    position: 'relative',
+    position: "relative",
     bottom: 0,
-    alignSelf: 'center'
+    left: -150,
+    alignSelf: "center",
   },
   itemContainer: {
-    position: 'absolute',
-    overflow: 'hidden'
-  }
+    position: "absolute",
+    overflow: "hidden",
+  },
 });

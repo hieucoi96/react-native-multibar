@@ -1,15 +1,13 @@
-import { Dimensions, StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from "react-native";
 
-const {
-  width: screenWidth
-} = Dimensions.get('screen');
+const { width: screenWidth } = Dimensions.get("screen");
 
 export const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
-    left: 0,
+    position: "absolute",
+    left: 150,
     bottom: 0,
     width: screenWidth,
-    justifyContent: 'flex-end'
-  }
+    justifyContent: "flex-end",
+  },
 });
