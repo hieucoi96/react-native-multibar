@@ -58,7 +58,7 @@ const MultiBarOverlay = ({ params }) => {
     return Object.assign(
       {
         expandingMode: "staging",
-        iconSize: 30,
+        iconSize: 80,
         overlayRadius: 80,
       },
       overlayProps || {}
