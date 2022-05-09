@@ -5,8 +5,8 @@ const react_native_1 = require("react-native");
 exports.styles = react_native_1.StyleSheet.create({
   container: {
     position: "relative",
-    bottom: 0,
-    left: -150,
+    bottom: -60,
+    left: 0,
     alignSelf: "center",
   },
   itemContainer: {

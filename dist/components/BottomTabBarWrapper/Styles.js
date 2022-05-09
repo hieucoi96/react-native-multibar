@@ -6,7 +6,8 @@ const { width: screenWidth } = react_native_1.Dimensions.get("screen");
 exports.styles = react_native_1.StyleSheet.create({
   container: {
     position: "absolute",
-    left: 150,
+    zIndex: 2,
+    left: (screenWidth - 64) / 2,
     bottom: 0,
     width: screenWidth,
     justifyContent: "flex-end",
