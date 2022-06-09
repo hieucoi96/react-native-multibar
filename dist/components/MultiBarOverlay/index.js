@@ -43,17 +43,11 @@ const react_native_1 = require("react-native");
 const context_1 = require("../../context");
 const Styles_1 = require("./Styles");
 const COMMON_DEGREES = 180;
-const {
-  width: screenWidth,
-  height: screenHeight,
-} = react_native_1.Dimensions.get("screen");
+const { width: screenWidth, height: screenHeight } =
+  react_native_1.Dimensions.get("screen");
 const MultiBarOverlay = ({ params }) => {
-  const {
-    data,
-    extrasVisible,
-    overlayProps,
-    setExtrasVisible,
-  } = React.useContext(context_1.MultiBarContext);
+  const { data, extrasVisible, overlayProps, setExtrasVisible } =
+    React.useContext(context_1.MultiBarContext);
   const { expandingMode, iconSize, overlayRadius } = React.useMemo(() => {
     return Object.assign(
       {
@@ -65,10 +59,10 @@ const MultiBarOverlay = ({ params }) => {
     );
   }, [overlayProps]);
   const iconSizeHalf = React.useMemo(() => iconSize / 2, [iconSize]);
-  const surfaceSize = React.useMemo(() => overlayRadius * 2 + iconSize, [
-    iconSize,
-    overlayRadius,
-  ]);
+  const surfaceSize = React.useMemo(
+    () => overlayRadius * 2 + iconSize,
+    [iconSize, overlayRadius]
+  );
   const surfaceSizeHalf = React.useMemo(() => surfaceSize / 2, [surfaceSize]);
   const angleStep = React.useMemo(() => COMMON_DEGREES / data.length, [data]);
   const animations = React.useMemo(
@@ -102,10 +96,10 @@ const MultiBarOverlay = ({ params }) => {
         };
         const angle = COMMON_DEGREES + angleStep * idx + angleStep / 2;
         const x =
-          overlayRadius * Math.cos((angle * Math.PI) / COMMON_DEGREES) +
+          overlayRadius * Math.cos((angle * Math.PI) / COMMON_DEGREES) * 1.2 +
           (surfaceSizeHalf - iconSizeHalf);
         const y =
-          overlayRadius * Math.sin((angle * Math.PI) / COMMON_DEGREES) +
+          overlayRadius * Math.sin((angle * Math.PI) / COMMON_DEGREES) * 0.7 +
           surfaceSizeHalf;
         const left = animations[idx].interpolate({
           inputRange: [0, 1],
@@ -117,7 +111,7 @@ const MultiBarOverlay = ({ params }) => {
         });
         const rotateZ = animations[idx].interpolate({
           inputRange: [0, 1],
-          outputRange: ["90deg", "0deg"],
+          outputRange: ["180deg", "0deg"],
         });
         return (
           <react_native_1.Animated.View
@@ -157,7 +151,7 @@ const MultiBarOverlay = ({ params }) => {
         backgroundColor: extrasVisible ? "rgba(0,0,0,0.6)" : "transparent",
         left: -((screenWidth - 64) / 2),
         bottom: 65,
-        height: screenHeight,
+        height: screenHeight + 100,
         width: "100%",
         flexDirection: "column-reverse",
       }}
