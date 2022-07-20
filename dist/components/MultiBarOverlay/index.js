@@ -135,6 +135,7 @@ const MultiBarOverlay = ({ params }) => {
         );
       }),
     [
+      extrasVisible,
       animations,
       angleStep,
       data,
