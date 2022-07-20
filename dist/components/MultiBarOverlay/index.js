@@ -83,7 +83,7 @@ const MultiBarOverlay = ({ params }) => {
     );
     const animator =
       expandingMode === "staging"
-        ? react_native_1.Animated.stagger(100, animationsList)
+        ? react_native_1.Animated.stagger(50, animationsList)
         : react_native_1.Animated.parallel(animationsList);
     animator.start();
     return () => animator.stop();
